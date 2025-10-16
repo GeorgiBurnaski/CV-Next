@@ -5,7 +5,7 @@ export default function Home() {
     <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50 dark:from-slate-900 dark:to-slate-800">
       <div className="max-w-6xl mx-auto px-6 py-8">
         {/* Header Section */}
-        <header className="bg-white dark:bg-slate-800 rounded-2xl shadow-xl p-8 mb-8 animate-fade-in opacity-0 animation-delay-100">
+        <header className="bg-white dark:bg-slate-800 rounded-2xl shadow-xl p-8 mb-8 animate-fade-in">
           <div className="flex flex-col md:flex-row items-center gap-8">
             <div className="pw-42 h-42 m-4 md:w-48 md:h-48 bg-gradient-to-br from-blue-500 to-purple-600 rounded-xl flex items-center justify-center text-white text-5xl md:text-6xl font-bold shadow-lg">
               GB
@@ -38,7 +38,7 @@ export default function Home() {
                   gvburnaski@gmail.com
                 </span>
                 <span className="flex items-center gap-2">
-                  <i className="fas fa-phone text-xl text-blue-500"></i>
+                  <i className="fas fa-phone text-xl text-blue-500 dark:text-blue-400"></i>
                   +359 88 857 4582
                 </span>
                 <a href="https://www.linkedin.com/in/georgi-burnaski-67598b22b/" className="width-fit height-fit hover:background-purple-100 rounded-lg px-2 py-1 hover:shadow-md transition">
@@ -60,22 +60,38 @@ export default function Home() {
 
         <div className="space-y-6">
           {/* About Section */}
-          <section className="bg-white dark:bg-slate-800 rounded-xl shadow-lg p-6 animate-fade-in opacity-0 animation-delay-300">
+          <section className="bg-white dark:bg-slate-800 rounded-xl shadow-lg p-6 animate-fade-in">
             <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4 flex items-center gap-3">
               <div className="w-8 h-8 bg-gradient-to-r from-purple-500 to-pink-600 rounded-lg"></div>
               About Me
             </h3>
             <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
-              Passionate full-stack developer with 5+ years of experience building scalable web applications. 
-              Specialized in React, Node.js, and modern JavaScript frameworks. Love creating user-friendly 
-              interfaces and robust backend systems.
+              Passionate full-stack developer with 3+ years of experience building web applications. 
+              Love creating user-friendly interfaces and robust backend systems. 
+              Background in scientific research and mathematics, bringing analytical skills to software development. Chemistry, Biology, and Data Science enthusiast.
             </p>
+          </section>
+          
+          {/* Education Section */}
+          <section className="bg-white dark:bg-slate-800 rounded-xl shadow-lg p-6 animate-fade-in">
+            <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-6 flex items-center gap-3">
+              <div className="w-8 h-8 bg-gradient-to-r from-indigo-500 to-blue-600 rounded-lg"></div>
+              Education
+            </h3>
+            <div className="space-y-4">
+              <div className="border-l-4 border-indigo-500 pl-6 relative">
+                <div className="absolute -left-2 top-0 w-4 h-4 bg-indigo-500 rounded-full"></div>
+                <h4 className="text-xl font-semibold text-gray-900 dark:text-white">Bachelor of Science in Computer Science</h4>
+                <p className="text-indigo-600 dark:text-indigo-400 font-medium">University of Technology</p>
+                <p className="text-sm text-gray-500 dark:text-gray-400">2016 - 2020</p>
+              </div>
+            </div>
           </section>
 
           {/* Skills and Languages Row */}
           <div className="grid md:grid-cols-2 gap-6">
             {/* Skills Section */}
-            <section className="bg-white dark:bg-slate-800 rounded-xl shadow-lg p-6 animate-fade-in opacity-0 animation-delay-500">
+            <section className="bg-white dark:bg-slate-800 rounded-xl shadow-lg p-6 animate-fade-in">
               <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-6 flex items-center gap-3">
                 <div className="w-8 h-8 bg-gradient-to-r from-blue-500 to-purple-600 rounded-lg"></div>
                 Skills
@@ -98,7 +114,7 @@ export default function Home() {
             </section>
 
             {/* Languages Section */}
-            <section className="bg-white dark:bg-slate-800 rounded-xl shadow-lg p-6 animate-fade-in opacity-0 animation-delay-700">
+            <section className="bg-white dark:bg-slate-800 rounded-xl shadow-lg p-6 animate-fade-in">
               <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-6 flex items-center gap-3">
                 <div className="w-8 h-8 bg-gradient-to-r from-green-500 to-teal-600 rounded-lg"></div>
                 Languages
@@ -121,7 +137,7 @@ export default function Home() {
 
 
           {/* Experience Section */}
-          <section className="bg-white dark:bg-slate-800 rounded-xl shadow-lg p-6 animate-fade-in opacity-0 animation-delay-900">
+          <section className="bg-white dark:bg-slate-800 rounded-xl shadow-lg p-6 animate-fade-in">
             <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-6 flex items-center gap-3">
               <div className="w-8 h-8 bg-gradient-to-r from-orange-500 to-red-600 rounded-lg"></div>
               Experience
@@ -152,21 +168,6 @@ export default function Home() {
             </div>
           </section>
 
-          {/* Education Section */}
-          <section className="bg-white dark:bg-slate-800 rounded-xl shadow-lg p-6 animate-fade-in opacity-0 animation-delay-1100">
-            <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-6 flex items-center gap-3">
-              <div className="w-8 h-8 bg-gradient-to-r from-indigo-500 to-blue-600 rounded-lg"></div>
-              Education
-            </h3>
-            <div className="space-y-4">
-              <div className="border-l-4 border-indigo-500 pl-6 relative">
-                <div className="absolute -left-2 top-0 w-4 h-4 bg-indigo-500 rounded-full"></div>
-                <h4 className="text-xl font-semibold text-gray-900 dark:text-white">Bachelor of Science in Computer Science</h4>
-                <p className="text-indigo-600 dark:text-indigo-400 font-medium">University of Technology</p>
-                <p className="text-sm text-gray-500 dark:text-gray-400">2016 - 2020</p>
-              </div>
-            </div>
-          </section>
         </div>
       </div>
     </div>

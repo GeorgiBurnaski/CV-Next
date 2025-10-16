@@ -19,6 +19,22 @@ export const metadata: Metadata = {
   keywords: "Full Stack Developer, Scientist, Mathematician, React, Next.js, TypeScript, Python, CV, Resume, Portfolio",
   authors: [{ name: "Georgi Burnaski" }],
   viewport: "width=device-width, initial-scale=1",
+  icons: {
+    icon: [
+      {
+        url: "/GB_black_on_white.ico",
+        media: "(prefers-color-scheme: light)",
+        sizes: "32x32",
+        type: "image/x-icon",
+      },
+      {
+        url: "/GB_white_on_black.ico",
+        media: "(prefers-color-scheme: dark)",
+        sizes: "32x32",
+        type: "image/x-icon",
+      },
+    ],
+  },
 };
 
 export default function RootLayout({
