@@ -113,7 +113,7 @@ export default function Home() {
             <ul className="text-gray-600 dark:text-gray-300 space-y-3">
               <li className="flex items-start gap-3">
                 <i className="fas fa-user text-purple-500 mt-1 flex-shrink-0"></i>
-                <span>Hi! I'm Georgi Burnaski, a dedicated Full Stack Developer with a strong background in scientific research and mathematics.</span>
+                <span>Hi! I'm Georgi Burnaski, a dedicated Developer with a strong background in Natural science and Mathematics.</span>
               </li>
               <li className="flex items-start gap-3">
                 <i className="fas fa-birthday-cake text-purple-500 mt-1 flex-shrink-0"></i>
@@ -152,16 +152,20 @@ export default function Home() {
                 <span>Enjoys hiking and outdoor activities.</span>
               </li>
               <li className="flex items-start gap-3">
-                <i className="fas fa-music text-purple-500 mt-1 flex-shrink-0"></i>
-                <span>Music lover and amateur guitarist.</span>
+                <i className="fas fa-car text-purple-500 mt-1 flex-shrink-0"></i>
+                <span>Passionate traveller, who explores nature almost every weekend, discovering new places and immersing in natural environments.</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <i className="fas fa-seedling text-purple-500 mt-1 flex-shrink-0"></i>
+                <span>Dedicated gardener focused on self-sufficiency and sustainable living, growing organic vegetables and bio-products for the family.</span>
               </li>
               <li className="flex items-start gap-3">
                 <i className="fas fa-gamepad text-purple-500 mt-1 flex-shrink-0"></i>
-                <span>Gamer with a passion for immersive storytelling and gameplay mechanics.</span>
+                <span>Gamer with a passion for complex strategy and gameplay mechanics.</span>
               </li>
               <li className="flex items-start gap-3">
                 <i className="fas fa-heart text-purple-500 mt-1 flex-shrink-0"></i>
-                <span>Family-oriented father of two.</span>
+                <span>Family-oriented, married, father of two.</span>
               </li>
             </ul>
           </section>
@@ -180,7 +184,7 @@ export default function Home() {
                 faculty="Faculty of Mathematics and Informatics"
                 period="2019 - 2025"
                 description="Specialized in Data Science with focus on machine learning, statistical analysis, and mathematical modeling. The program combines theoretical foundations with practical applications in data analysis and predictive modeling."
-                gpa="5.50/6.00"
+                gpa="Very good (4.50/6.00)"
                 coursework={[
                   "Machine Learning",
                   "Statistical Analysis",
@@ -208,7 +212,7 @@ export default function Home() {
                 faculty="Faculty of Biology and Biochemistry"
                 period="2015 - 2018"
                 description="Focused on the intersection of biology and data science."
-                gpa="57.22/100 (2:2 Honours)"
+                gpa="Good (57.22/100 (2:2 Honours))"
                 coursework={[
                   "Biochemistry 1 & 2",
                   "Cell & Molecular Biology",
@@ -221,9 +225,9 @@ export default function Home() {
                   "Bioinformatics and Biochemical Data Analysis"
                 ]}
                 achievements={[
-                  "Dean's List for academic excellence",
-                  "Research project on predictive modeling",
-                  "Thesis on machine learning applications in data science"
+                  "Good academic performance throughout all years, reguardless of the language barrier.",
+                  "Great performance in laboratory work and research projects.",
+                  "Outstanding thesis and lab work on biochemistry, more specifically plant biology."
                 ]}
                 diplomaImageUrl="/diploma.jpg"
               />
@@ -231,12 +235,12 @@ export default function Home() {
             <span className="block h-6"></span>
             <div className="space-y-4">
               <EducationEntry
-                degree="High School Diploma"
+                degree="High School Diploma (Chemistry Focus)"
                 university="National High School of Mathematics and Science"
                 faculty="Chemistry"
                 period="2011 - 2015"
                 description="High School Diploma in Natural Sciences. Focused on Chemistry, Biology, and Mathematics."
-                gpa="5.50/6.00"
+                gpa="Excellent (>5.50/6.00)"
                 coursework={[
                   "Mathematics",
                   "Bulgarian Language and Literature",
@@ -248,9 +252,9 @@ export default function Home() {
                   "Physical Education"
                 ]}
                 achievements={[
-                  "Dean's List for academic excellence",
-                  "Research project on predictive modeling",
-                  "Thesis on machine learning applications in data science"
+                  "Great performance in national chemistry competitions, many regional and a national participation, where I finished second.",
+                  "Went on European Science Olympiad (EUSO) as part of the Bulgarian team.",
+                  "Many science fairs participations and awards. Mostly in Chemistry."
                 ]}
                 diplomaImageUrl="/diploma.jpg"
               />
@@ -258,12 +262,12 @@ export default function Home() {
             <span className="block h-6"></span>
             <div className="space-y-4">
               <EducationEntry
-                degree="Primary Education Certificate"
+                degree="Primary Education Certificate (Mathematics Focus)"
                 university="107th Primary School 'Han Krum'"
                 faculty="Mathematics"
                 period="2005 - 2011"
                 description="Focused on more intensive mathematical training."
-                gpa="5.50/6.00"
+                gpa="Excellent (>5.50/6.00)"
                 coursework={[
                   "Mathematics",
                   "Bulgarian Language and Literature",
@@ -274,9 +278,9 @@ export default function Home() {
                   "Arts",
                 ]}
                 achievements={[
-                  "Dean's List for academic excellence",
-                  "Research project on predictive modeling",
-                  "Thesis on machine learning applications in data science"
+                  "Entered advanced mathematics classes due to high performance on mathematics competitions.",
+                  "Excellent academic performance throughout all years.",
+                  "Was top 5% of the class academically."
                 ]}
                 diplomaImageUrl="/diploma.jpg"
               />
@@ -293,9 +297,9 @@ export default function Home() {
             </h3>
             <div className="space-y-4">
               <ExperienceEntry
-                title="Senior Full Stack Developer"
-                jobTitle="Lead Developer"
-                company="Tech Solutions Inc."
+                title="Actuarial Trainee"
+                jobTitle="System administrator, IT support, and Junior Developer"
+                company="Pension Assurance Company 'Saglasie' JSC"
                 period="2022 - Present"
                 description="Leading a team of developers in creating scalable web applications and microservices architecture. Focus on performance optimization and mentoring junior developers."
                 responsibilities={[
@@ -378,6 +382,20 @@ export default function Home() {
                   description: "Web development, Laravel framework, server-side scripting"
                 },
                 { 
+                  lang: "R", 
+                  level: "Expert", 
+                  icon: "fab fa-r-project",
+                  color: "emerald",
+                  description: "Statistical computing, data analysis, visualization"
+                },
+                { 
+                  lang: "LaTeX", 
+                  level: "Expert", 
+                  icon: "fas fa-file-code",
+                  color: "red",
+                  description: "Document preparation, typesetting"
+                },
+                { 
                   lang: "SQL", 
                   level: "Advanced", 
                   icon: "fas fa-database",
@@ -385,18 +403,11 @@ export default function Home() {
                   description: "Database design, complex queries, optimization"
                 },
                 { 
-                  lang: "React", 
+                  lang: "Next.js", 
                   level: "Advanced", 
-                  icon: "fab fa-react",
+                  icon: "fas fa-bolt",
                   color: "cyan",
-                  description: "Modern React, hooks, state management"
-                },
-                { 
-                  lang: "Node.js", 
-                  level: "Advanced", 
-                  icon: "fab fa-node-js",
-                  color: "green",
-                  description: "Backend development, APIs, microservices"
+                  description: "Full-stack React framework, SSR, static generation"
                 },
                 { 
                   lang: "JavaScript", 
@@ -406,25 +417,18 @@ export default function Home() {
                   description: "Modern frameworks like React, Node.js"
                 },
                 { 
-                  lang: "TypeScript", 
+                  lang: "React", 
                   level: "Intermediate", 
-                  icon: "fab fa-js-square",
-                  color: "blue",
-                  description: "Type-safe development, enterprise applications"
-                },
-                { 
-                  lang: "C#", 
-                  level: "Intermediate", 
-                  icon: "fas fa-code",
+                  icon: "fab fa-react",
                   color: "indigo",
-                  description: ".NET framework, desktop and web applications"
+                  description: "Component-based UI library, hooks, state management"
                 },
                 { 
-                  lang: "C++", 
+                  lang: "Node.js", 
                   level: "Basic", 
-                  icon: "fas fa-code",
-                  color: "red",
-                  description: "Object-oriented programming, basic algorithms"
+                  icon: "fab fa-node-js",
+                  color: "green",
+                  description: "Backend development, APIs, microservices"
                 }
               ].map((item, index) => (
                 <div key={index} className={`p-4 rounded-lg border-l-4 transition-all duration-300 hover:shadow-md ${
@@ -435,6 +439,7 @@ export default function Home() {
                   item.color === 'purple' ? 'border-purple-500 bg-purple-50 dark:bg-purple-900/20' :
                   item.color === 'red' ? 'border-red-500 bg-red-50 dark:bg-red-900/20' :
                   item.color === 'indigo' ? 'border-indigo-500 bg-indigo-50 dark:bg-indigo-900/20' :
+                  item.color === 'emerald' ? 'border-emerald-500 bg-emerald-50 dark:bg-emerald-900/20' :
                   'border-gray-500 bg-gray-50 dark:bg-gray-900/20'
                 }`}>
                   <div className="flex items-center justify-between mb-2">
@@ -447,6 +452,7 @@ export default function Home() {
                         item.color === 'purple' ? 'text-purple-600 dark:text-purple-400' :
                         item.color === 'red' ? 'text-red-600 dark:text-red-400' :
                         item.color === 'indigo' ? 'text-indigo-600 dark:text-indigo-400' :
+                        item.color === 'emerald' ? 'text-emerald-600 dark:text-emerald-400' :
                         'text-gray-600 dark:text-gray-400'
                       }`}></i>
                       <span className="text-lg font-semibold text-gray-900 dark:text-white">{item.lang}</span>
@@ -531,8 +537,8 @@ export default function Home() {
                   "Data Science",
                   "Scientific Research",
                   "Experimental Design",
-                  "Chemistry Knowledge",
-                  "Biology Fundamentals",
+                  "Advanced Chemistry Understanding",
+                  "Deep Biological Knowledge",
                   "Research Methodology",
                   "Scientific Writing",
                   "Laboratory Techniques",
@@ -721,10 +727,8 @@ export default function Home() {
               >
                 <div className="flex items-center gap-3">
                   <i className="fas fa-calendar-alt text-indigo-500 text-xl"></i>
-                  <h4 className="text-xl font-semibold text-gray-900 dark:text-white">Recent Activities</h4>
-                  <span className="px-2 py-1 bg-indigo-100 dark:bg-indigo-900 text-indigo-800 dark:text-indigo-200 rounded-full text-xs font-medium">
-                    8 activities
-                  </span>
+                  <h4 className="text-xl font-semibold text-gray-900 dark:text-white">Memorable Moments</h4>
+
                 </div>
                 <i className={`fas ${expandedActivities ? 'fa-chevron-up' : 'fa-chevron-down'} text-indigo-500 transition-transform duration-300 ${expandedActivities ? 'rotate-180' : 'rotate-0'}`}></i>
               </button>
