@@ -48,7 +48,7 @@ export default function EducationEntry({
           <p className="text-sm text-indigo-600 dark:text-indigo-400">{faculty}</p>
           <p className="text-sm text-gray-500 dark:text-gray-400">{period}</p>
         </div>
-        <i className={`fas ${isExpanded ? 'fa-chevron-up' : 'fa-chevron-down'} text-indigo-500 transition-transform duration-700 ml-4 ${isExpanded ? 'rotate-180' : 'rotate-0'}`}></i>
+        <i className={`fas ${isExpanded ? 'fa-chevron-up' : 'fa-chevron-up'} text-indigo-500 transition-transform duration-700 ml-4 ${isExpanded ? 'rotate-180' : 'rotate-0'}`}></i>
       </div>
       
       <div className={`overflow-hidden transition-all duration-700 ease-in-out ${isExpanded ? 'max-h-[800px] opacity-100' : 'max-h-0 opacity-0'}`}>
