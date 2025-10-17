@@ -18,7 +18,6 @@ export const metadata: Metadata = {
   description: "Full Stack Developer, Scientist, Mathematician - Professional CV",
   keywords: "Full Stack Developer, Scientist, Mathematician, React, Next.js, TypeScript, Python, CV, Resume, Portfolio",
   authors: [{ name: "Georgi Burnaski" }],
-  viewport: "width=device-width, initial-scale=1",
   icons: {
     icon: [
       {

@@ -1,4 +1,5 @@
 import Image from "next/image";
+import EducationEntry from "@/components/EducationEntry";
 
 export default function Home() {
   return (
@@ -65,26 +66,176 @@ export default function Home() {
               <div className="w-8 h-8 bg-gradient-to-r from-purple-500 to-pink-600 rounded-lg"></div>
               About Me
             </h3>
-            <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
-              Passionate full-stack developer with 3+ years of experience building web applications. 
-              Love creating user-friendly interfaces and robust backend systems. 
-              Background in scientific research and mathematics, bringing analytical skills to software development. Chemistry, Biology, and Data Science enthusiast.
-            </p>
+            <ul className="text-gray-600 dark:text-gray-300 space-y-3">
+              <li className="flex items-start gap-3">
+                <i className="fas fa-user text-purple-500 mt-1 flex-shrink-0"></i>
+                <span>Hi! I'm Georgi Burnaski, a dedicated Full Stack Developer with a strong background in scientific research and mathematics.</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <i className="fas fa-birthday-cake text-purple-500 mt-1 flex-shrink-0"></i>
+                <span>Born on 6th of June 1996, in Sofia, Bulgaria .</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <i className="fas fa-map-marker-alt text-purple-500 mt-1 flex-shrink-0"></i>
+                <span>Currently based in Sofia, Bulgaria with an address:<address>Mladost 1A, #513, ent. 1, ap. 18, post code: 1784</address></span>
+              </li>
+              <li className="flex items-start gap-3">
+                <i className="fas fa-code text-purple-500 mt-1 flex-shrink-0"></i>
+                <span>I have experience in building web applications using modern technologies like 
+                  <i className="fab fa-react text-blue-500 mx-1"></i>React, 
+                  <i className="fas fa-bolt text-gray-700 dark:text-white mx-1"></i>Next.js, 
+                  <i className="fab fa-js-square text-blue-600 mx-1"></i>TypeScript, and 
+                  <i className="fab fa-python text-yellow-500 mx-1"></i>Python. As well as incorporating other technologies like 
+                  <i className="fab fa-git-alt text-orange-500 mx-1"></i>Git and 
+                  <i className="fab fa-docker text-blue-400 mx-1"></i>Docker. With some experience in other programming languages such as 
+                  <i className="fab fa-php text-purple-600 mx-1"></i>PHP and 
+                  <i className="fas fa-database text-gray-600 mx-1"></i>SQL.</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <i className="fas fa-paint-brush text-purple-500 mt-1 flex-shrink-0"></i>
+                <span>Creative problem solver with a passion for design and user experience.</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <i className="fas fa-calculator text-purple-500 mt-1 flex-shrink-0"></i>
+                <span>Background in scientific research and mathematics, bringing analytical skills to software development.</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <i className="fas fa-flask text-purple-500 mt-1 flex-shrink-0"></i>
+                <span>Chemistry, Biology, Mathematics and Data Science enthusiast, with corresponding degrees.</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <i className="fas fa-hiking text-purple-500 mt-1 flex-shrink-0"></i>
+                <span>Enjoys hiking and outdoor activities.</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <i className="fas fa-music text-purple-500 mt-1 flex-shrink-0"></i>
+                <span>Music lover and amateur guitarist.</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <i className="fas fa-gamepad text-purple-500 mt-1 flex-shrink-0"></i>
+                <span>Gamer with a passion for immersive storytelling and gameplay mechanics.</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <i className="fas fa-heart text-purple-500 mt-1 flex-shrink-0"></i>
+                <span>Family-oriented and values strong relationships.</span>
+              </li>
+            </ul>
           </section>
           
           {/* Education Section */}
           <section className="bg-white dark:bg-slate-800 rounded-xl shadow-lg p-6 animate-fade-in">
             <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-6 flex items-center gap-3">
-              <div className="w-8 h-8 bg-gradient-to-r from-indigo-500 to-blue-600 rounded-lg"></div>
+              <div className="w-8 h-8 bg-gradient-to-r from-blue-600 to-red-600 rounded-lg"></div>
               Education
             </h3>
             <div className="space-y-4">
-              <div className="border-l-4 border-indigo-500 pl-6 relative">
-                <div className="absolute -left-2 top-0 w-4 h-4 bg-indigo-500 rounded-full"></div>
-                <h4 className="text-xl font-semibold text-gray-900 dark:text-white">Bachelor of Science in Computer Science</h4>
-                <p className="text-indigo-600 dark:text-indigo-400 font-medium">University of Technology</p>
-                <p className="text-sm text-gray-500 dark:text-gray-400">2016 - 2020</p>
-              </div>
+              <EducationEntry
+                degree="Master of Science (M.Sc.) in Applied Mathematics (Data Science)"
+                degreeName="Probability, Acuarial mathematics and Statistics for non-mathematicians"
+                university="University of Sofia"
+                faculty="Faculty of Mathematics and Informatics"
+                period="2019 - 2025"
+                description="Specialized in Data Science with focus on machine learning, statistical analysis, and mathematical modeling. The program combines theoretical foundations with practical applications in data analysis and predictive modeling."
+                gpa="5.50/6.00"
+                coursework={[
+                  "Machine Learning",
+                  "Statistical Analysis",
+                  "Data Mining",
+                  "Mathematical Modeling",
+                  "Probability Theory",
+                  "Linear Algebra",
+                  "Optimization Methods",
+                  "Database Systems"
+                ]}
+                achievements={[
+                  "Dean's List for academic excellence",
+                  "Research project on predictive modeling",
+                  "Thesis on machine learning applications in data science"
+                ]}
+                diplomaImageUrl="/diploma.jpg"
+              />
+            </div>
+            <span className="block h-6"></span>
+            <div className="space-y-4">
+              <EducationEntry
+                degree="Bachelor of Science (B.Sc.) in Biology (Biochemistry)"
+                degreeName="BSc (Hons) Biochemistry"
+                university="University of Bath"
+                faculty="Faculty of Biology and Biochemistry"
+                period="2015 - 2018"
+                description="Focused on the intersection of biology and data science."
+                gpa="57.22/100 (2:2 Honours)"
+                coursework={[
+                  "Biochemistry 1 & 2",
+                  "Cell & Molecular Biology",
+                  "Genetics",
+                  "Protein Structure and Function",
+                  "Plant Biology and Biotechnology",
+                  "Molecular and Cellular Neuroscience",
+                  "Cellular Biochemistry and Metabolism",
+                  "Entrepreneurial Biotechnology",
+                  "Bioinformatics and Biochemical Data Analysis"
+                ]}
+                achievements={[
+                  "Dean's List for academic excellence",
+                  "Research project on predictive modeling",
+                  "Thesis on machine learning applications in data science"
+                ]}
+                diplomaImageUrl="/diploma.jpg"
+              />
+            </div>
+            <span className="block h-6"></span>
+            <div className="space-y-4">
+              <EducationEntry
+                degree="High School Diploma"
+                university="National High School of Mathematics and Science"
+                faculty="Chemistry"
+                period="2011 - 2015"
+                description="High School Diploma in Natural Sciences. Focused on Chemistry, Biology, and Mathematics."
+                gpa="5.50/6.00"
+                coursework={[
+                  "Mathematics",
+                  "Bulgarian Language and Literature",
+                  "Biology",
+                  "Chemistry",
+                  "Physics",
+                  "Humanitarian Sciences",
+                  "English Language",
+                  "Physical Education"
+                ]}
+                achievements={[
+                  "Dean's List for academic excellence",
+                  "Research project on predictive modeling",
+                  "Thesis on machine learning applications in data science"
+                ]}
+                diplomaImageUrl="/diploma.jpg"
+              />
+            </div>
+            <span className="block h-6"></span>
+            <div className="space-y-4">
+              <EducationEntry
+                degree="Primary Education Certificate"
+                university="107th Primary School 'Han Krum'"
+                faculty="Mathematics"
+                period="2005 - 2011"
+                description="Focused on more intensive mathematical training."
+                gpa="5.50/6.00"
+                coursework={[
+                  "Mathematics",
+                  "Bulgarian Language and Literature",
+                  "Natural Sciences",
+                  "Humanitarian Sciences",
+                  "Physical Education",
+                  "Music",
+                  "Arts",
+                ]}
+                achievements={[
+                  "Dean's List for academic excellence",
+                  "Research project on predictive modeling",
+                  "Thesis on machine learning applications in data science"
+                ]}
+                diplomaImageUrl="/diploma.jpg"
+              />
             </div>
           </section>
 
