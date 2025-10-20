@@ -1,13 +1,13 @@
 "use client";
 
-import { useState } from 'react';
+import { useState, ReactNode } from 'react';
 
 interface ExperienceEntryProps {
   title: string;
   jobTitle?: string;
   company: string;
   period: string;
-  description?: string;
+  description?: ReactNode;
   responsibilities?: string[];
   technologies?: string[];
   achievements?: string[];
@@ -53,7 +53,7 @@ export default function ExperienceEntry({
           {description && (
             <div>
               <h5 className="font-medium text-gray-900 dark:text-white mb-2">Description</h5>
-              <p className="text-gray-600 dark:text-gray-300 text-sm">{description}</p>
+              <div className="text-gray-600 dark:text-gray-300 text-sm">{description}</div>
             </div>
           )}
           

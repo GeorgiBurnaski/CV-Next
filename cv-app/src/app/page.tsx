@@ -8,11 +8,104 @@ import ProjectEntry from "@/components/ProjectEntry";
 import { useState } from "react";
 
 export default function Home() {
-  const [expandedActivities, setExpandedActivities] = useState(false);
+  const [selectedFilters, setSelectedFilters] = useState<string[]>([]);
 
-  const toggleActivities = () => {
-    setExpandedActivities(!expandedActivities);
+  const toggleFilter = (category: string) => {
+    setSelectedFilters(prev => 
+      prev.includes(category) 
+        ? prev.filter(c => c !== category)
+        : [...prev, category]
+    );
   };
+
+  // Activity data for easier filtering
+  const activities: Array<{
+    date: string;
+    title: string;
+    category: string;
+    color: "green" | "orange" | "purple" | "blue";
+    description: string;
+    image: string;
+    hasImage: boolean;
+  }> = [
+    {
+      date: "October 2025",
+      title: "Mountain Trail Adventure",
+      category: "Hiking",
+      color: "green",
+      description: "Explored the scenic mountain trails during autumn season",
+      image: "/hobbies/hiking1.jpg",
+      hasImage: false
+    },
+    {
+      date: "September 2025",
+      title: "Garden Harvest Season",
+      category: "Gardening",
+      color: "orange",
+      description: "Harvesting homegrown vegetables and planning next season's garden",
+      image: "/hobbies/gardening1.jpg",
+      hasImage: false
+    },
+    {
+      date: "August 2025",
+      title: "European Adventure",
+      category: "Travelling",
+      color: "purple",
+      description: "Explored historic cities and cultural landmarks across Europe",
+      image: "/hobbies/travel1.jpg",
+      hasImage: false
+    },
+    {
+      date: "July 2025",
+      title: "Gaming Setup Upgrade",
+      category: "Gaming",
+      color: "blue",
+      description: "Enhanced gaming setup for better strategy gaming experience",
+      image: "/hobbies/gaming1.jpg",
+      hasImage: false
+    },
+    {
+      date: "June 2025",
+      title: "Peak Summit Achievement",
+      category: "Hiking",
+      color: "green",
+      description: "Successfully reached the summit of a challenging peak",
+      image: "/hobbies/hiking2.jpg",
+      hasImage: false
+    },
+    {
+      date: "May 2025",
+      title: "Spring Garden Setup",
+      category: "Gardening",
+      color: "orange",
+      description: "Planted new vegetables and flowers for the growing season",
+      image: "/hobbies/gardening2.jpg",
+      hasImage: false
+    },
+    {
+      date: "April 2025",
+      title: "Coastal Road Trip",
+      category: "Travelling",
+      color: "purple",
+      description: "Scenic coastal drive discovering hidden beaches and local cuisine",
+      image: "/hobbies/travel2.jpg",
+      hasImage: false
+    },
+    {
+      date: "March 2025",
+      title: "Strategy Gaming Tournament",
+      category: "Gaming",
+      color: "blue",
+      description: "Participated in local strategy gaming competition",
+      image: "/hobbies/gaming2.jpg",
+      hasImage: false
+    }
+  ];
+
+  // Filter activities based on selected categories - show none when no filters selected
+  const filteredActivities = selectedFilters.length === 0 
+    ? [] 
+    : activities.filter(activity => selectedFilters.includes(activity.category));
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50 dark:from-slate-900 dark:to-slate-800">
       <div className="max-w-6xl mx-auto px-6 py-8">
@@ -121,19 +214,14 @@ export default function Home() {
               </li>
               <li className="flex items-start gap-3">
                 <i className="fas fa-map-marker-alt text-purple-500 mt-1 flex-shrink-0"></i>
-                <span>Currently based in Sofia, Bulgaria with an address:<address>Mladost 1A, #513, ent. 1, ap. 18, post code: 1784</address></span>
+                <span>Currently based in Sofia, Bulgaria, Mladost 1A</span>
               </li>
               <li className="flex items-start gap-3">
                 <i className="fas fa-code text-purple-500 mt-1 flex-shrink-0"></i>
-                <span>I have experience in building web applications using modern technologies like 
-                  <i className="fab fa-react text-blue-500 mx-1"></i>React, 
-                  <i className="fas fa-bolt text-gray-700 dark:text-white mx-1"></i>Next.js, 
-                  <i className="fab fa-js-square text-blue-600 mx-1"></i>TypeScript, and 
-                  <i className="fab fa-python text-yellow-500 mx-1"></i>Python. As well as incorporating other technologies like 
-                  <i className="fab fa-git-alt text-orange-500 mx-1"></i>Git and 
-                  <i className="fab fa-docker text-blue-400 mx-1"></i>Docker. With some experience in other programming languages such as 
-                  <i className="fab fa-php text-purple-600 mx-1"></i>PHP and 
-                  <i className="fas fa-database text-gray-600 mx-1"></i>SQL.</span>
+                <span>Built a few projects in <i className="fab fa-python text-blue-500 mx-1"></i> Python, some of which are showcased in the portfolio. These include some data analytic scripts as well as my dissertation in applied mathematics.<br />
+                I have experience in building web applications using <i className="fab fa-php text-purple-500 mx-1"/> PHP and <i className="fas fa-database text-gray-600 dark:text-gray-100 mx-1"></i> SQL. Such as an actuarial calculator for insurance purposes, as well as other small internal tools for data input optimisation and automation.<br />
+                Experience with <i className="fab fa-react text-blue-500 mx-1"></i> React, <i className="fas fa-bolt text-gray-700 dark:text-white mx-1"></i> Next.js, <i className="fab fa-js-square text-blue-600 mx-1"></i> TypeScript, and other modern web development technologies. Built this very website as well as other small web applications. And attempted to recreate my employer's PHP-based website from scratch using these technologies.<br />
+                </span>
               </li>
               <li className="flex items-start gap-3">
                 <i className="fas fa-paint-brush text-purple-500 mt-1 flex-shrink-0"></i>
@@ -253,7 +341,7 @@ export default function Home() {
                 ]}
                 achievements={[
                   "Great performance in national chemistry competitions, many regional and a national participation, where I finished second.",
-                  "Went on European Science Olympiad (EUSO) as part of the Bulgarian team.",
+                  "Went on European Science Olympiad (EUSO) 2013 as part of the Bulgarian team.",
                   "Many science fairs participations and awards. Mostly in Chemistry."
                 ]}
                 diplomaImageUrl="/diploma.jpg"
@@ -279,8 +367,7 @@ export default function Home() {
                 ]}
                 achievements={[
                   "Entered advanced mathematics classes due to high performance on mathematics competitions.",
-                  "Excellent academic performance throughout all years.",
-                  "Was top 5% of the class academically."
+                  "Excellent academic performance throughout all years."
                 ]}
                 diplomaImageUrl="/diploma.jpg"
               />
@@ -301,60 +388,96 @@ export default function Home() {
                 jobTitle="System administrator, IT support, and Junior Developer"
                 company="Pension Assurance Company 'Saglasie' JSC"
                 period="2022 - Present"
-                description="Leading a team of developers in creating scalable web applications and microservices architecture. Focus on performance optimization and mentoring junior developers."
+                description="As an Actuarial Trainee at Pension Assurance Company 'Saglasie' JSC, I am responsible for supporting the actuarial team in data analysis, model development, and reporting. My role involves working with large datasets, performing statistical analyses, and assisting in the development of actuarial models to support the company's pension products. I also contribute to the automation of data processing tasks and help ensure compliance with regulatory requirements. I was also responsible for system administration and IT support, ensuring the smooth operation of the company's IT infrastructure. Additionally, I have taken on junior developer responsibilities, contributing to the development and maintenance of internal software applications mosty the website and actuarial calculator."
                 responsibilities={[
-                  "Lead development of microservices architecture",
-                  "Mentor junior developers and conduct code reviews",
-                  "Optimize application performance and scalability",
-                  "Collaborate with product team on feature planning",
-                  "Implement CI/CD pipelines and deployment strategies"
+                  "Assist in data collection and analysis for actuarial models",
+                  "Support the development and validation of actuarial models",
+                  "Prepare reports and presentations for internal and external stakeholders",
+                  "Collaborate with cross-functional teams to ensure data accuracy and integrity",
+                  "Stay updated on industry trends and regulatory changes affecting actuarial practices",
+                  "Provide IT support and system administration for company infrastructure",
+                  "Contribute to the development and maintenance of internal software applications"                           
                 ]}
                 technologies={[
-                  "React.js",
-                  "Node.js",
-                  "TypeScript",
-                  "Docker",
-                  "Kubernetes",
-                  "PostgreSQL",
-                  "Redis",
-                  "AWS"
+                  "Python",
+                  "SQL",
+                  "Excel (VBA)",
+                  "PHP",
+                  "Web development (HTML, CSS, JavaScript)"
                 ]}
                 achievements={[
-                  "Improved application performance by 40%",
-                  "Successfully led migration to microservices",
-                  "Reduced deployment time by 60%",
-                  "Mentored 3 junior developers to mid-level"
+                  "Successfully assisted in the development of actuarial models for new pension products",
+                  "Improved data processing efficiency through automation",
+                  "Received positive feedback from senior actuaries and management",
+                  "Played a key role in maintaining IT infrastructure and providing timely support"
                 ]}
-                certificateUrl="/senior-dev-certificate.pdf"
+              />
+
+              <ExperienceEntry
+                title="Financial Crime Analyst"
+                jobTitle="AML Analyst"
+                company="passcon GmbH"
+                period="Jan 2022 - Oct 2022"
+                description="As an AML Analyst at passcon GmbH, I was responsible for monitoring and analyzing transactions to detect suspicious activities related to money laundering and financial crimes. My role involves conducting thorough investigations, preparing reports, and collaborating with law enforcement agencies to ensure compliance with regulatory requirements."  
+                responsibilities={[
+                  "Monitor and analyze transactions for suspicious activities",
+                  "Conduct thorough investigations into potential financial crimes",
+                  "Prepare detailed reports for internal and external stakeholders",
+                  "Collaborate with law enforcement agencies as needed"
+                ]}
+                technologies={[
+                  "Internal AML software",
+                  "Excel",
+                  "SQL databases"
+                
+                ]}
+                achievements={[
+                  "Successfully identified and reported multiple suspicious activities",
+                  "Maintained high accuracy and attention to detail in investigations",
+                  "Received commendations for thoroughness and professionalism",
+                  "Contributed to the development of improved monitoring processes"
+                  
+                ]}
               />
               
               <ExperienceEntry
-                title="Frontend Developer"
-                jobTitle="UI/UX Developer"
-                company="Digital Agency Co."
-                period="2020 - 2022"
-                description="Developed responsive web applications and collaborated closely with design teams to create pixel-perfect user interfaces."
+                title="Writer in E-Journal 'Economic life'"
+                jobTitle="Freelance Writer"
+                company="Razvitie Corporation"
+                period="2018 - Present"
+                description={
+                  <>
+                    I am a freelance writer specializing in modern technology topics. I create well-researched articles that explain complex technological concepts in an accessible manner for a broad audience. My work involves staying up-to-date with the latest trends in technology and translating that knowledge into engaging content. You can find my articles published in the e-journal 'Economic life' at{' '}
+                    <a 
+                      href="https://ikj.bg/?s=%D0%93%D0%B5%D0%BE%D1%80%D0%B3%D0%B8+%D0%91%D1%83%D1%80%D0%BD%D0%B0%D1%81%D0%BA%D0%B8" 
+                      target="_blank" 
+                      rel="noopener noreferrer" 
+                      className="text-blue-600 dark:text-blue-400 hover:underline"
+                    >
+                      ikj.bg
+                    </a>
+                    , where I cover a range of topics from emerging technologies to practical applications in everyday life.
+                  </>
+                }
                 responsibilities={[
-                  "Develop responsive web applications using React",
-                  "Collaborate with design team for UI implementation",
-                  "Optimize frontend performance and accessibility",
-                  "Maintain and update existing client projects",
+                  "Research and write articles on technology issues",
+                  "Collaborate with editors to refine content",
+                  "Ensure all content meets high editorial standards",
+                  "Stay updated on technology trends and news",
                   "Participate in client meetings and project planning"
                 ]}
                 technologies={[
-                  "React.js",
-                  "TypeScript",
-                  "SASS/SCSS",
-                  "Webpack",
-                  "Jest",
-                  "Figma",
-                  "Git"
+                  "WordPress",
+                  "Google Docs",
+                  "SEO best practices",
+                  "Content management systems",
+                  "Social media promotion"
                 ]}
                 achievements={[
-                  "Delivered 15+ client projects on time",
-                  "Improved website loading speed by 35%",
-                  "Implemented accessibility standards (WCAG 2.1)",
-                  "Received client satisfaction rating of 4.8/5"
+                  "Delivered over 50 high-quality articles",
+                  "Consistently met tight deadlines",
+                  "Received positive feedback from editors",
+                  "Built a strong portfolio of published work"
                 ]}
               />
             </div>
@@ -394,6 +517,20 @@ export default function Home() {
                   icon: "fas fa-file-code",
                   color: "red",
                   description: "Document preparation, typesetting"
+                },
+                { 
+                  lang: "HTML", 
+                  level: "Expert", 
+                  icon: "fab fa-html5",
+                  color: "orange",
+                  description: "Semantic markup, accessibility, modern standards"
+                },
+                { 
+                  lang: "CSS", 
+                  level: "Expert", 
+                  icon: "fab fa-css3-alt",
+                  color: "teal",
+                  description: "Advanced styling, animations, responsive design"
                 },
                 { 
                   lang: "SQL", 
@@ -440,6 +577,8 @@ export default function Home() {
                   item.color === 'red' ? 'border-red-500 bg-red-50 dark:bg-red-900/20' :
                   item.color === 'indigo' ? 'border-indigo-500 bg-indigo-50 dark:bg-indigo-900/20' :
                   item.color === 'emerald' ? 'border-emerald-500 bg-emerald-50 dark:bg-emerald-900/20' :
+                  item.color === 'orange' ? 'border-orange-500 bg-orange-50 dark:bg-orange-900/20' :
+                  item.color === 'teal' ? 'border-teal-500 bg-teal-50 dark:bg-teal-900/20' :
                   'border-gray-500 bg-gray-50 dark:bg-gray-900/20'
                 }`}>
                   <div className="flex items-center justify-between mb-2">
@@ -453,6 +592,8 @@ export default function Home() {
                         item.color === 'red' ? 'text-red-600 dark:text-red-400' :
                         item.color === 'indigo' ? 'text-indigo-600 dark:text-indigo-400' :
                         item.color === 'emerald' ? 'text-emerald-600 dark:text-emerald-400' :
+                        item.color === 'orange' ? 'text-orange-600 dark:text-orange-400' :
+                        item.color === 'teal' ? 'text-teal-600 dark:text-teal-400' :
                         'text-gray-600 dark:text-gray-400'
                       }`}></i>
                       <span className="text-lg font-semibold text-gray-900 dark:text-white">{item.lang}</span>
@@ -471,88 +612,7 @@ export default function Home() {
               ))}
             </div>
           </section>
-          {/* Skills Section */}
-          <section className="bg-white dark:bg-slate-800 rounded-xl shadow-lg p-6 animate-fade-in">
-            <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">
-              Skills & Expertise
-            </h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {/* Coding-Oriented Skills */}
-              <div className="space-y-3">
-                <h4 className="text-lg font-semibold text-blue-600 dark:text-blue-400 flex items-center gap-2">
-                  <i className="fas fa-code text-blue-500"></i>
-                  Coding & Development
-                </h4>
-                {[
-                  "React.js/Next.js",
-                  "TypeScript/JavaScript", 
-                  "Python/Django",
-                  "Node.js/Express",
-                  "HTML5/CSS3/SCSS",
-                  "PostgreSQL/MongoDB",
-                  "REST APIs/GraphQL",
-                  "Docker/Kubernetes",
-                  "Git/GitHub",
-                  "AWS/Cloud Services"
-                ].map((skill, index) => (
-                  <div key={index} className="flex items-center gap-3 p-2 bg-blue-50 dark:bg-blue-900/20 rounded-lg hover:bg-blue-100 dark:hover:bg-blue-900/40 transition-colors">
-                    <i className="fas fa-laptop-code text-blue-500 text-sm"></i>
-                    <span className="text-gray-700 dark:text-gray-300 font-medium">{skill}</span>
-                  </div>
-                ))}
-              </div>
-
-              {/* Mathematics-Oriented Skills */}
-              <div className="space-y-3">
-                <h4 className="text-lg font-semibold text-purple-600 dark:text-purple-400 flex items-center gap-2">
-                  <i className="fas fa-calculator text-purple-500"></i>
-                  Mathematics & Analytics
-                </h4>
-                {[
-                  "Statistical Analysis",
-                  "Linear Algebra",
-                  "Probability Theory",
-                  "Mathematical Modeling",
-                  "Optimization Methods",
-                  "Machine Learning",
-                  "Data Mining",
-                  "Predictive Modeling",
-                  "R/MATLAB",
-                  "NumPy/Pandas"
-                ].map((skill, index) => (
-                  <div key={index} className="flex items-center gap-3 p-2 bg-purple-50 dark:bg-purple-900/20 rounded-lg hover:bg-purple-100 dark:hover:bg-purple-900/40 transition-colors">
-                    <i className="fas fa-chart-line text-purple-500 text-sm"></i>
-                    <span className="text-gray-700 dark:text-gray-300 font-medium">{skill}</span>
-                  </div>
-                ))}
-              </div>
-
-              {/* Science-Oriented Skills */}
-              <div className="space-y-3">
-                <h4 className="text-lg font-semibold text-green-600 dark:text-green-400 flex items-center gap-2">
-                  <i className="fas fa-flask text-green-500"></i>
-                  Science & Research
-                </h4>
-                {[
-                  "Data Science",
-                  "Scientific Research",
-                  "Experimental Design",
-                  "Advanced Chemistry Understanding",
-                  "Deep Biological Knowledge",
-                  "Research Methodology",
-                  "Scientific Writing",
-                  "Laboratory Techniques",
-                  "Hypothesis Testing",
-                  "Academic Publishing"
-                ].map((skill, index) => (
-                  <div key={index} className="flex items-center gap-3 p-2 bg-green-50 dark:bg-green-900/20 rounded-lg hover:bg-green-100 dark:hover:bg-green-900/40 transition-colors">
-                    <i className="fas fa-microscope text-green-500 text-sm"></i>
-                    <span className="text-gray-700 dark:text-gray-300 font-medium">{skill}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </section>
+          
 
           {/* Projects Section */}
           <section className="bg-white dark:bg-slate-800 rounded-xl shadow-lg p-6 animate-fade-in">
@@ -583,32 +643,32 @@ export default function Home() {
                   "Demonstrated modern web development skills",
                   "Showcased attention to UI/UX design"
                 ]}
-                githubUrl="#"
+                githubUrl="https://github.com/GeorgiBurnaski/CV-Next/tree/17487165149ac08f39fce2148b0b1b285746911c/cv-app"
                 liveUrl="#"
               />
               
               <ProjectEntry
-                title="Data Analysis Dashboard"
-                description="Interactive dashboard for visualizing complex datasets with real-time charts and statistical insights."
+                title="Actuarial Calculator"
+                description="A tool for performing complex actuarial calculations and visualizing the results."
                 technologies={["Python", "Pandas", "Plotly", "Streamlit"]}
                 status="In Progress"
-                icon="fas fa-chart-bar"
+                icon="fas fa-calculator"
                 color="purple"
                 features={[
-                  "Real-time data visualization",
-                  "Interactive filtering and sorting",
-                  "Statistical analysis tools",
-                  "Export functionality for reports"
+                  "Programmable actuarial calculations",
+                  "Data visualization with interactive charts",
+                  "User-friendly interface for input parameters",
+                  "Exportable reports"
                 ]}
                 challenges={[
-                  "Handling large datasets efficiently",
-                  "Creating intuitive user interfaces for complex data",
-                  "Implementing real-time updates"
+                  "Implementing accurate actuarial formulas",
+                  "Designing intuitive user input flows",
+                  "Ensuring scalability for large datasets and multiple companies"
                 ]}
                 outcomes={[
-                  "Improved data-driven decision making",
-                  "Reduced analysis time by 60%",
-                  "Enhanced data accessibility for stakeholders"
+                  "Streamlined actuarial calculations",
+                  "Improved data visualization for better insights",
+                  "Enhanced user experience for pensioners and actuaries"
                 ]}
                 githubUrl="#"
               />
@@ -708,120 +768,187 @@ export default function Home() {
                   title: "Gaming",
                   description: "Strategy games & game development"
                 }
-              ].map((hobby, index) => (
-                <div key={index} className={`p-4 ${hobby.bg} ${hobby.hover} rounded-lg transition-all duration-300 hover:shadow-md`}>
-                  <div className="text-center">
-                    <i className={`${hobby.icon} ${hobby.color} text-3xl mb-3`}></i>
-                    <h4 className="font-semibold text-gray-900 dark:text-white mb-2">{hobby.title}</h4>
-                    <p className="text-sm text-gray-600 dark:text-gray-300">{hobby.description}</p>
-                  </div>
-                </div>
-              ))}
+              ].map((hobby, index) => {
+                const isSelected = selectedFilters.includes(hobby.title);
+                return (
+                  <button 
+                    key={index} 
+                    onClick={() => toggleFilter(hobby.title)}
+                    className={`p-4 rounded-lg transition-all duration-300 hover:shadow-md w-full ${
+                      isSelected 
+                        ? `${hobby.bg} ring-2 ring-${hobby.color.split('-')[1]}-500 shadow-lg transform scale-105` 
+                        : `${hobby.bg} ${hobby.hover}`
+                    }`}
+                  >
+                    <div className="text-center">
+                      <i className={`${hobby.icon} ${hobby.color} text-3xl mb-3 ${isSelected ? 'animate-pulse' : ''}`}></i>
+                      <h4 className="font-semibold text-gray-900 dark:text-white mb-2">{hobby.title}</h4>
+                      <p className="text-sm text-gray-600 dark:text-gray-300">{hobby.description}</p>
+                    </div>
+                  </button>
+                );
+              })}
             </div>
 
-            {/* Activity Timeline Dropdown */}
-            <div>
-              <button 
-                onClick={toggleActivities}
-                className="w-full flex items-center justify-between p-4 bg-gradient-to-r from-indigo-50 to-purple-50 dark:from-indigo-900/20 dark:to-purple-900/20 rounded-lg border border-indigo-200 dark:border-indigo-700 hover:border-indigo-300 dark:hover:border-indigo-600 transition-all duration-300 hover:shadow-md"
-              >
-                <div className="flex items-center gap-3">
-                  <i className="fas fa-calendar-alt text-indigo-500 text-xl"></i>
-                  <h4 className="text-xl font-semibold text-gray-900 dark:text-white">Memorable Moments</h4>
+            {/* Activity Timeline - Always Expanded */}
+            <div className="mt-8">
+              <div className="flex items-center gap-3 mb-6">
+                <i className="fas fa-calendar-alt text-indigo-500 text-xl"></i>
+                <h4 className="text-xl font-semibold text-gray-900 dark:text-white">Memorable Moments</h4>
+                {selectedFilters.length > 0 && (
+                  <span className="text-sm text-gray-500 dark:text-gray-400">
+                    ({filteredActivities.length} of {activities.length} activities)
+                  </span>
+                )}
+              </div>
 
+              {/* Filter Status - Always Visible */}
+              <div className="mb-4 p-3 bg-blue-50 dark:bg-blue-900/20 rounded-lg">
+                <div className="flex items-center gap-2 flex-wrap">
+                  <span className="text-sm text-gray-600 dark:text-gray-300">
+                    {selectedFilters.length > 0 ? 'Filtering by:' : 'Select hobby category to view examples of activities'}
+                  </span>
+                  {selectedFilters.length > 0 && (
+                    <>
+                      {selectedFilters.map(filter => (
+                        <span key={filter} className="px-2 py-1 bg-blue-100 dark:bg-blue-800 text-blue-800 dark:text-blue-200 rounded text-xs font-medium">
+                          {filter}
+                        </span>
+                      ))}
+                      <button 
+                        onClick={() => setSelectedFilters([])}
+                        className="text-xs text-blue-600 dark:text-blue-400 hover:underline ml-2"
+                      >
+                        Clear all
+                      </button>
+                    </>
+                  )}
                 </div>
-                <i className={`fas ${expandedActivities ? 'fa-chevron-up' : 'fa-chevron-down'} text-indigo-500 transition-transform duration-300 ${expandedActivities ? 'rotate-180' : 'rotate-0'}`}></i>
-              </button>
+              </div>
 
-              {/* Dropdown Content */}
-              <div className={`overflow-hidden transition-all duration-500 ease-in-out ${expandedActivities ? 'max-h-[1000px] opacity-100 mt-4' : 'max-h-0 opacity-0'}`}>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <ActivityEntry
-                    date="October 2025"
-                    title="Mountain Trail Adventure"
-                    category="Hiking"
-                    color="green"
-                    description="Explored the scenic mountain trails during autumn season"
-                    image="/hobbies/hiking1.jpg"
-                    hasImage={false}
-                  />
-                  
-                  <ActivityEntry
-                    date="September 2025"
-                    title="Garden Harvest Season"
-                    category="Gardening"
-                    color="orange"
-                    description="Harvesting homegrown vegetables and planning next season's garden"
-                    image="/hobbies/gardening1.jpg"
-                    hasImage={false}
-                  />
-                  
-                  <ActivityEntry
-                    date="August 2025"
-                    title="European Adventure"
-                    category="Travelling"
-                    color="purple"
-                    description="Explored historic cities and cultural landmarks across Europe"
-                    image="/hobbies/travel1.jpg"
-                    hasImage={false}
-                  />
-                  
-                  <ActivityEntry
-                    date="July 2025"
-                    title="Gaming Setup Upgrade"
-                    category="Gaming"
-                    color="blue"
-                    description="Enhanced gaming setup for better strategy gaming experience"
-                    image="/hobbies/gaming1.jpg"
-                    hasImage={false}
-                  />
-                  
-                  <ActivityEntry
-                    date="June 2025"
-                    title="Peak Summit Achievement"
-                    category="Hiking"
-                    color="green"
-                    description="Successfully reached the summit of a challenging peak"
-                    image="/hobbies/hiking2.jpg"
-                    hasImage={false}
-                  />
-                  
-                  <ActivityEntry
-                    date="May 2025"
-                    title="Spring Garden Setup"
-                    category="Gardening"
-                    color="orange"
-                    description="Planted new vegetables and flowers for the growing season"
-                    image="/hobbies/gardening2.jpg"
-                    hasImage={false}
-                  />
-                  
-                  <ActivityEntry
-                    date="April 2025"
-                    title="Coastal Road Trip"
-                    category="Travelling"
-                    color="purple"
-                    description="Scenic coastal drive discovering hidden beaches and local cuisine"
-                    image="/hobbies/travel2.jpg"
-                    hasImage={false}
-                  />
-                  
-                  <ActivityEntry
-                    date="March 2025"
-                    title="Strategy Gaming Tournament"
-                    category="Gaming"
-                    color="blue"
-                    description="Participated in local strategy gaming competition"
-                    image="/hobbies/gaming2.jpg"
-                    hasImage={false}
-                  />
-                </div>
+              {/* Activity Timeline Content */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                {filteredActivities.length > 0 ? (
+                  filteredActivities.map((activity, index) => (
+                    <ActivityEntry
+                      key={index}
+                      date={activity.date}
+                      title={activity.title}
+                      category={activity.category}
+                      color={activity.color}
+                      description={activity.description}
+                      image={activity.image}
+                      hasImage={activity.hasImage}
+                    />
+                  ))
+                ) : (
+                  <div className="col-span-full text-center py-8">
+                    <i className="fas fa-calendar-alt text-gray-400 text-3xl mb-4"></i>
+                    <p className="text-gray-500 dark:text-gray-400">
+                      {selectedFilters.length === 0 
+                        ? "Select hobby categories above to view related activities." 
+                        : "No activities match the selected filters."
+                      }
+                    </p>
+                    {selectedFilters.length > 0 && (
+                      <button 
+                        onClick={() => setSelectedFilters([])}
+                        className="mt-2 text-blue-600 dark:text-blue-400 hover:underline"
+                      >
+                        Clear filters
+                      </button>
+                    )}
+                  </div>
+                )}
               </div>
             </div>
           </section>
 
+{/* Skills Section */}
+          <section className="bg-white dark:bg-slate-800 rounded-xl shadow-lg p-6 animate-fade-in">
+            <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">
+              Skills & Expertise
+            </h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {/* Coding-Oriented Skills */}
+              <div className="space-y-3">
+                <h4 className="text-lg font-semibold text-blue-600 dark:text-blue-400 flex items-center gap-2">
+                  <i className="fas fa-code text-blue-500"></i>
+                  Coding & Development
+                </h4>
+                {[
+                  "React.js/Next.js",
+                  "TypeScript/JavaScript", 
+                  "Python/Django",
+                  "Node.js/Express",
+                  "HTML5/CSS3/SCSS",
+                  "PostgreSQL/MongoDB",
+                  "REST APIs/GraphQL",
+                  "Docker/Kubernetes",
+                  "Git/GitHub",
+                  "AWS/Cloud Services"
+                ].map((skill, index) => (
+                  <div key={index} className="flex items-center gap-3 p-2 bg-blue-50 dark:bg-blue-900/20 rounded-lg hover:bg-blue-100 dark:hover:bg-blue-900/40 transition-colors">
+                    <i className="fas fa-laptop-code text-blue-500 text-sm"></i>
+                    <span className="text-gray-700 dark:text-gray-300 font-medium">{skill}</span>
+                  </div>
+                ))}
+              </div>
+
+              {/* Mathematics-Oriented Skills */}
+              <div className="space-y-3">
+                <h4 className="text-lg font-semibold text-purple-600 dark:text-purple-400 flex items-center gap-2">
+                  <i className="fas fa-calculator text-purple-500"></i>
+                  Mathematics & Analytics
+                </h4>
+                {[
+                  "Statistical Analysis",
+                  "Linear Algebra",
+                  "Probability Theory",
+                  "Mathematical Modeling",
+                  "Optimization Methods",
+                  "Machine Learning",
+                  "Data Mining",
+                  "Predictive Modeling",
+                  "R/MATLAB",
+                  "NumPy/Pandas"
+                ].map((skill, index) => (
+                  <div key={index} className="flex items-center gap-3 p-2 bg-purple-50 dark:bg-purple-900/20 rounded-lg hover:bg-purple-100 dark:hover:bg-purple-900/40 transition-colors">
+                    <i className="fas fa-chart-line text-purple-500 text-sm"></i>
+                    <span className="text-gray-700 dark:text-gray-300 font-medium">{skill}</span>
+                  </div>
+                ))}
+              </div>
+
+              {/* Science-Oriented Skills */}
+              <div className="space-y-3">
+                <h4 className="text-lg font-semibold text-green-600 dark:text-green-400 flex items-center gap-2">
+                  <i className="fas fa-flask text-green-500"></i>
+                  Science & Research
+                </h4>
+                {[
+                  "Data Science",
+                  "Scientific Research",
+                  "Experimental Design",
+                  "Advanced Chemistry Understanding",
+                  "Deep Biological Knowledge",
+                  "Research Methodology",
+                  "Scientific Writing",
+                  "Laboratory Techniques",
+                  "Hypothesis Testing",
+                  "Academic Publishing"
+                ].map((skill, index) => (
+                  <div key={index} className="flex items-center gap-3 p-2 bg-green-50 dark:bg-green-900/20 rounded-lg hover:bg-green-100 dark:hover:bg-green-900/40 transition-colors">
+                    <i className="fas fa-microscope text-green-500 text-sm"></i>
+                    <span className="text-gray-700 dark:text-gray-300 font-medium">{skill}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </section>
         </div>
       </div>
     </div>
-  );
-}            
+
+);
+}     

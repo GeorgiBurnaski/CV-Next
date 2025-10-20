@@ -95,7 +95,7 @@ export default function ProjectEntry({
           <span className={`px-3 py-1 rounded-full text-sm font-medium ${getStatusClasses()}`}>
             {status}
           </span>
-          <i className={`fas fa-chevron-${isExpanded ? 'up' : 'down'} text-gray-400 transition-transform duration-700 ${isExpanded ? 'rotate-180' : ''}`}></i>
+          <i className={`fas fa-chevron-up text-gray-400 transition-transform duration-700 ${isExpanded ? 'rotate-180' : ''}`}></i>
         </div>
       </div>
       
