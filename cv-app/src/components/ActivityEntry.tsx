@@ -145,7 +145,10 @@ export default function ActivityEntry({
             >
               <i className="fas fa-times text-gray-600 dark:text-gray-300"></i>
             </button>
-
+<div 
+  className="fixed inset-0 backdrop-blur-md bg-white/20 dark:bg-slate-900/20 z-50 flex items-center justify-center p-4 animate-fade-in"
+  onClick={toggleExpanded}
+></div>
             <div className="p-8">
               <div className="flex flex-col lg:flex-row gap-8">
                 {/* Large Image Section */}
