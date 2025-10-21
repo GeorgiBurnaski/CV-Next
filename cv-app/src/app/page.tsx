@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import EducationEntry from "@/components/EducationEntry";
 import ExperienceEntry from "@/components/ExperienceEntry";
 import ActivityEntry from "@/components/ActivityEntry";
@@ -245,7 +244,7 @@ export default function Home() {
             <ul className="text-gray-600 dark:text-gray-300 space-y-3">
               <li className="flex items-start gap-3">
                 <i className="fas fa-user text-purple-500 mt-1 flex-shrink-0"></i>
-                <span>Hi! I'm Georgi Burnaski, a dedicated Developer with a strong background in Natural Sciences and Mathematics.</span>
+                <span>Hi! I&apos;m Georgi Burnaski, a dedicated Developer with a strong background in Natural Sciences and Mathematics.</span>
               </li>
               <li className="flex items-start gap-3">
                 <i className="fas fa-birthday-cake text-purple-500 mt-1 flex-shrink-0"></i>
@@ -259,7 +258,7 @@ export default function Home() {
                 <i className="fas fa-code text-purple-500 mt-1 flex-shrink-0"></i>
                 <span>Built a few projects in <i className="fab fa-python text-blue-500 mx-1"></i> Python, some of which are showcased in the portfolio. These include some data analytic scripts as well as my dissertation in applied mathematics.<br />
                 I have experience in building web applications using <i className="fab fa-php text-purple-500 mx-1"/> PHP and <i className="fas fa-database text-gray-600 dark:text-gray-100 mx-1"></i> SQL. Such as an actuarial calculator for insurance purposes, as well as other small internal tools for data input optimisation and automation.<br />
-                Experience with <i className="fab fa-react text-blue-500 mx-1"></i> React, <i className="fas fa-bolt text-gray-700 dark:text-white mx-1"></i> Next.js, <i className="fab fa-js-square text-blue-600 mx-1"></i> TypeScript, and other modern web development technologies. Built this very website as well as other small web applications. And attempted to recreate my employer's PHP-based website from scratch using these technologies.<br />
+                Experience with <i className="fab fa-react text-blue-500 mx-1"></i> React, <i className="fas fa-bolt text-gray-700 dark:text-white mx-1"></i> Next.js, <i className="fab fa-js-square text-blue-600 mx-1"></i> TypeScript, and other modern web development technologies. Built this very website as well as other small web applications. And attempted to recreate my employer&apos;s PHP-based website from scratch using these technologies.<br />
                 </span>
               </li>
               <li className="flex items-start gap-3">
@@ -486,7 +485,7 @@ export default function Home() {
                 period="2018 - Present"
                 description={
                   <>
-                    I am a freelance writer specializing in modern technology topics. I create well-researched articles that explain complex technological concepts in an accessible manner for a broad audience. My work involves staying up-to-date with the latest trends in technology and translating that knowledge into engaging content. You can find my articles published in the e-journal 'Economic life' at{' '}
+                    I am a freelance writer specializing in modern technology topics. I create well-researched articles that explain complex technological concepts in an accessible manner for a broad audience. My work involves staying up-to-date with the latest trends in technology and translating that knowledge into engaging content. You can find my articles published in the e-journal &apos;Economic life&apos; at{' '}
                     <a 
                       href="https://ikj.bg/?s=%D0%93%D0%B5%D0%BE%D1%80%D0%B3%D0%B8+%D0%91%D1%83%D1%80%D0%BD%D0%B0%D1%81%D0%BA%D0%B8" 
                       target="_blank" 

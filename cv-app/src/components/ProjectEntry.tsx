@@ -24,7 +24,6 @@ export default function ProjectEntry({
   status,
   icon,
   color,
-  link,
   githubUrl,
   liveUrl,
   features,
