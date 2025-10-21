@@ -206,7 +206,7 @@ export default function Home() {
             <ul className="text-gray-600 dark:text-gray-300 space-y-3">
               <li className="flex items-start gap-3">
                 <i className="fas fa-user text-purple-500 mt-1 flex-shrink-0"></i>
-                <span>Hi! I'm Georgi Burnaski, a dedicated Developer with a strong background in Natural science and Mathematics.</span>
+                <span>Hi! I'm Georgi Burnaski, a dedicated Developer with a strong background in Natural Sciences and Mathematics.</span>
               </li>
               <li className="flex items-start gap-3">
                 <i className="fas fa-birthday-cake text-purple-500 mt-1 flex-shrink-0"></i>
@@ -865,84 +865,122 @@ export default function Home() {
           </section>
 
 {/* Skills Section */}
-          <section className="bg-white dark:bg-slate-800 rounded-xl shadow-lg p-6 animate-fade-in">
-            <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">
-              Skills & Expertise
-            </h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {/* Coding-Oriented Skills */}
-              <div className="space-y-3">
-                <h4 className="text-lg font-semibold text-blue-600 dark:text-blue-400 flex items-center gap-2">
-                  <i className="fas fa-code text-blue-500"></i>
-                  Coding & Development
-                </h4>
-                {[
-                  "React.js/Next.js",
-                  "TypeScript/JavaScript", 
-                  "Python/Django",
-                  "Node.js/Express",
-                  "HTML5/CSS3/SCSS",
-                  "PostgreSQL/MongoDB",
-                  "REST APIs/GraphQL",
-                  "Docker/Kubernetes",
-                  "Git/GitHub",
-                  "AWS/Cloud Services"
-                ].map((skill, index) => (
-                  <div key={index} className="flex items-center gap-3 p-2 bg-blue-50 dark:bg-blue-900/20 rounded-lg hover:bg-blue-100 dark:hover:bg-blue-900/40 transition-colors">
-                    <i className="fas fa-laptop-code text-blue-500 text-sm"></i>
-                    <span className="text-gray-700 dark:text-gray-300 font-medium">{skill}</span>
+          <section className="bg-white dark:bg-slate-800 rounded-xl shadow-lg p-6 animate-fade-in overflow-hidden relative">
+            {/* Background decoration */}
+            <div className="absolute inset-0 bg-gradient-to-br from-blue-50/20 via-purple-50/20 to-orange-50/20 dark:from-blue-900/10 dark:via-purple-900/10 dark:to-orange-900/10"></div>
+            <div className="relative z-10">
+              <h3 className="text-2xl font-bold text-white mb-6 text-left">
+                Skills & Expertise
+              </h3>
+              
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                {/* Coding-Oriented Skills */}
+                <div className="space-y-3 group h-full">
+                  <div className="bg-white dark:bg-slate-800 rounded-lg p-4 shadow-md group-hover:shadow-xl transition-all duration-300 transform group-hover:-translate-y-1 border border-gray-200 dark:border-gray-700 h-16 flex items-center">
+                    <h4 className="text-lg font-semibold text-blue-600 dark:text-blue-400 flex items-center gap-2 w-full">
+                      <i className="fas fa-code text-blue-500 w-5"></i>
+                      <span className="flex-1">Coding</span>
+                    </h4>
                   </div>
-                ))}
-              </div>
+                  {[
+                    { name: "React.js/Next.js", icon: "fab fa-react" },
+                    { name: "TypeScript/JavaScript", icon: "fab fa-js" }, 
+                    { name: "Python/Django", icon: "fab fa-python" },
+                    { name: "Node.js/Express", icon: "fab fa-node-js" },
+                    { name: "HTML5/CSS3/SCSS", icon: "fab fa-html5" },
+                    { name: "PostgreSQL/MongoDB", icon: "fas fa-database" },
+                    { name: "REST APIs/GraphQL", icon: "fas fa-exchange-alt" },
+                    { name: "Docker/Kubernetes", icon: "fab fa-docker" },
+                    { name: "Git/GitHub", icon: "fab fa-git-alt" },
+                    { name: "PHP/XAMPP", icon: "fab fa-php" }
+                  ].map((skill, index) => (
+                    <div key={index} className="flex items-center gap-3 p-3 bg-blue-50 dark:bg-blue-900/20 rounded-lg hover:bg-blue-100 dark:hover:bg-blue-900/40 transition-all duration-300 hover:scale-105 hover:shadow-md group/item h-12">
+                      <i className={`${skill.icon} text-blue-500 text-lg w-5 flex-shrink-0`}></i>
+                      <span className="text-gray-700 dark:text-gray-300 font-medium flex-1">{skill.name}</span>
+                    </div>
+                  ))}
+                </div>
 
-              {/* Mathematics-Oriented Skills */}
-              <div className="space-y-3">
-                <h4 className="text-lg font-semibold text-purple-600 dark:text-purple-400 flex items-center gap-2">
-                  <i className="fas fa-calculator text-purple-500"></i>
-                  Mathematics & Analytics
-                </h4>
-                {[
-                  "Statistical Analysis",
-                  "Linear Algebra",
-                  "Probability Theory",
-                  "Mathematical Modeling",
-                  "Optimization Methods",
-                  "Machine Learning",
-                  "Data Mining",
-                  "Predictive Modeling",
-                  "R/MATLAB",
-                  "NumPy/Pandas"
-                ].map((skill, index) => (
-                  <div key={index} className="flex items-center gap-3 p-2 bg-purple-50 dark:bg-purple-900/20 rounded-lg hover:bg-purple-100 dark:hover:bg-purple-900/40 transition-colors">
-                    <i className="fas fa-chart-line text-purple-500 text-sm"></i>
-                    <span className="text-gray-700 dark:text-gray-300 font-medium">{skill}</span>
+                {/* Mathematics-Oriented Skills */}
+                <div className="space-y-3 group h-full">
+                  <div className="bg-white dark:bg-slate-800 rounded-lg p-4 shadow-md group-hover:shadow-xl transition-all duration-300 transform group-hover:-translate-y-1 border border-gray-200 dark:border-gray-700 h-16 flex items-center">
+                    <h4 className="text-lg font-semibold text-purple-600 dark:text-purple-400 flex items-center gap-2 w-full">
+                      <i className="fas fa-calculator text-purple-500 w-5"></i>
+                      <span className="flex-1">Mathematics</span>
+                    </h4>
                   </div>
-                ))}
-              </div>
+                  {[
+                    { name: "Statistical Analysis", icon: "fas fa-chart-bar" },
+                    { name: "Linear Algebra", icon: "fas fa-square-root-alt" },
+                    { name: "Probability Theory", icon: "fas fa-dice" },
+                    { name: "Mathematical Modeling", icon: "fas fa-project-diagram" },
+                    { name: "Optimization Methods", icon: "fas fa-bullseye" },
+                    { name: "Machine Learning", icon: "fas fa-brain" },
+                    { name: "Data Mining", icon: "fas fa-gem" },
+                    { name: "Predictive Modeling", icon: "fas fa-lightbulb" },
+                    { name: "R/MATLAB", icon: "fas fa-chart-line" },
+                    { name: "NumPy/Pandas", icon: "fas fa-table" }
+                  ].map((skill, index) => (
+                    <div key={index} className="flex items-center gap-3 p-3 bg-purple-50 dark:bg-purple-900/20 rounded-lg hover:bg-purple-100 dark:hover:bg-purple-900/40 transition-all duration-300 hover:scale-105 hover:shadow-md group/item h-12">
+                      <i className={`${skill.icon} text-purple-500 text-lg w-5 flex-shrink-0`}></i>
+                      <span className="text-gray-700 dark:text-gray-300 font-medium flex-1">{skill.name}</span>
+                    </div>
+                  ))}
+                </div>
 
-              {/* Science-Oriented Skills */}
-              <div className="space-y-3">
-                <h4 className="text-lg font-semibold text-green-600 dark:text-green-400 flex items-center gap-2">
-                  <i className="fas fa-flask text-green-500"></i>
-                  Science & Research
-                </h4>
-                {[
-                  "Data Science",
-                  "Scientific Research",
-                  "Experimental Design",
-                  "Advanced Chemistry Understanding",
-                  "Deep Biological Knowledge",
-                  "Research Methodology",
-                  "Scientific Writing",
-                  "Laboratory Techniques",
-                  "Hypothesis Testing",
-                  "Academic Publishing"
-                ].map((skill, index) => (
-                  <div key={index} className="flex items-center gap-3 p-2 bg-green-50 dark:bg-green-900/20 rounded-lg hover:bg-green-100 dark:hover:bg-green-900/40 transition-colors">
-                    <i className="fas fa-microscope text-green-500 text-sm"></i>
-                    <span className="text-gray-700 dark:text-gray-300 font-medium">{skill}</span>
+                {/* Science-Oriented Skills */}
+                <div className="space-y-3 group h-full">
+                  <div className="bg-white dark:bg-slate-800 rounded-lg p-4 shadow-md group-hover:shadow-xl transition-all duration-300 transform group-hover:-translate-y-1 border border-gray-200 dark:border-gray-700 h-16 flex items-center">
+                    <h4 className="text-lg font-semibold text-green-600 dark:text-green-400 flex items-center gap-2 w-full">
+                      <i className="fas fa-flask text-green-500 w-5"></i>
+                      <span className="flex-1">Research</span>
+                    </h4>
                   </div>
-                ))}
+                  {[
+                    { name: "Data Science", icon: "fas fa-database" },
+                    { name: "Scientific Research", icon: "fas fa-search" },
+                    { name: "Experimental Design", icon: "fas fa-vial" },
+                    { name: "Advanced Chemistry", icon: "fas fa-atom" },
+                    { name: "Advanced Biology", icon: "fas fa-dna" },
+                    { name: "Research Methodology", icon: "fas fa-clipboard-list" },
+                    { name: "Scientific Writing", icon: "fas fa-pen-fancy" },
+                    { name: "Laboratory Techniques", icon: "fas fa-microscope" },
+                    { name: "Hypothesis Testing", icon: "fas fa-question-circle" },
+                    { name: "Academic Publishing", icon: "fas fa-book-open" }
+                  ].map((skill, index) => (
+                    <div key={index} className="flex items-center gap-3 p-3 bg-green-50 dark:bg-green-900/20 rounded-lg hover:bg-green-100 dark:hover:bg-green-900/40 transition-all duration-300 hover:scale-105 hover:shadow-md group/item h-12">
+                      <i className={`${skill.icon} text-green-500 text-lg w-5 flex-shrink-0`}></i>
+                      <span className="text-gray-700 dark:text-gray-300 font-medium flex-1">{skill.name}</span>
+                    </div>
+                  ))}
+                </div>
+
+                {/* People & Communication Skills */}
+                <div className="space-y-3 group h-full">
+                  <div className="bg-white dark:bg-slate-800 rounded-lg p-4 shadow-md group-hover:shadow-xl transition-all duration-300 transform group-hover:-translate-y-1 border border-gray-200 dark:border-gray-700 h-16 flex items-center">
+                    <h4 className="text-lg font-semibold text-orange-600 dark:text-orange-400 flex items-center gap-2 w-full">
+                      <i className="fas fa-users text-orange-500 w-5"></i>
+                      <span className="flex-1">Communication</span>
+                    </h4>
+                  </div>
+                  {[
+                    { name: "Leadership", icon: "fas fa-crown" },
+                    { name: "Public Speaking", icon: "fas fa-microphone-alt" },
+                    { name: "Outgoing", icon: "fas fa-smile-beam" },
+                    { name: "Conflict Resolution", icon: "fas fa-balance-scale" },
+                    { name: "Empathic", icon: "fas fa-hands-helping" },
+                    { name: "Communicator", icon: "fas fa-comments" },
+                    { name: "Supportive", icon: "fas fa-user-friends" },
+                    { name: "Presentation Skills", icon: "fas fa-chalkboard" },
+                    { name: "Innovative", icon: "fas fa-lightbulb" },
+                    { name: "Emotional Intelligence", icon: "fas fa-heart" }
+                  ].map((skill, index) => (
+                    <div key={index} className="flex items-center gap-3 p-3 bg-orange-50 dark:bg-orange-900/20 rounded-lg hover:bg-orange-100 dark:hover:bg-orange-900/40 transition-all duration-300 hover:scale-105 hover:shadow-md group/item h-12">
+                      <i className={`${skill.icon} text-orange-500 text-lg w-5 flex-shrink-0`}></i>
+                      <span className="text-gray-700 dark:text-gray-300 font-medium flex-1">{skill.name}</span>
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
           </section>
