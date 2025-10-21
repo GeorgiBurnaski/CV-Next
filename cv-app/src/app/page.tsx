@@ -29,13 +29,13 @@ export default function Home() {
     hasImage: boolean;
   }> = [
     {
-      date: "October 2025",
-      title: "Mountain Trail Adventure",
+      date: "21 October 2025",
+      title: "Malyovitsa Trail Adventure",
       category: "Hiking",
       color: "green",
-      description: "Explored the scenic mountain trails during autumn season",
+      description: "Explored the scenic mountain trails near Malyovitsa, during autumn season",
       image: "/hobbies/hiking1.jpg",
-      hasImage: false
+      hasImage: true
     },
     {
       date: "September 2025",
@@ -47,13 +47,13 @@ export default function Home() {
       hasImage: false
     },
     {
-      date: "August 2025",
-      title: "European Adventure",
+      date: "August 2023",
+      title: "Trip to Shiroka Polyana",
       category: "Travelling",
       color: "purple",
-      description: "Explored historic cities and cultural landmarks across Europe",
+      description: "Camped at one of my favorite spots in Bulgaria for two weeks with my family.",
       image: "/hobbies/travel1.jpg",
-      hasImage: false
+      hasImage: true
     },
     {
       date: "July 2025",
@@ -137,6 +137,39 @@ export default function Home() {
                   Statistician
                 </span>
               </h2>
+              
+              {/* Personal Interests */}
+              <div className="flex flex-wrap justify-center md:justify-start gap-4 mb-4">
+                <span className="flex items-center gap-2 text-green-600 dark:text-green-400 text-lg md:text-lg font-semibold">
+                  <i className="fas fa-file text-lg"></i>
+                  Writer
+                </span>
+                <span className="flex items-center gap-2 text-green-600 dark:text-green-400 text-lg md:text-lg font-semibold">
+                  <i className="fas fa-book text-lg"></i>
+                  Learner
+                </span>
+                <span className="flex items-center gap-2 text-green-600 dark:text-green-400 text-lg md:text-lg font-semibold">
+                  <i className="fas fa-dumbbell text-lg"></i>
+                  Achiever
+                </span>
+                <span className="flex items-center gap-2 text-green-600 dark:text-green-400 text-lg md:text-lg font-semibold">
+                  <i className="fas fa-hiking text-lg"></i>
+                  Hiker
+                </span>
+                <span className="flex items-center gap-2 text-green-600 dark:text-green-400 text-lg md:text-lg font-semibold">
+                  <i className="fas fa-globe-americas text-lg"></i>
+                  Traveller
+                </span>
+                <span className="flex items-center gap-2 text-green-600 dark:text-green-400 text-lg md:text-lg font-semibold">
+                  <i className="fas fa-seedling text-lg"></i>
+                  Producer
+                </span>
+                <span className="flex items-center gap-2 text-green-600 dark:text-green-400 text-lg md:text-lg font-semibold">
+                  <i className="fas fa-gamepad text-lg"></i>
+                  Strategist
+                </span>
+              </div>
+              
               <div className="flex flex-wrap justify-center md:justify-start gap-4 text-gray-600 dark:text-gray-300">
                 <span className="flex items-center gap-2">
                   <i className="fas fa-envelope text-xl text-green-500"></i>
@@ -146,17 +179,23 @@ export default function Home() {
                   <i className="fas fa-phone text-xl text-blue-500 dark:text-blue-400"></i>
                   +359 88 857 4582
                 </span>
-                <a href="https://www.linkedin.com/in/georgi-burnaski-67598b22b/" className="width-fit height-fit hover:background-purple-100 rounded-lg px-2 py-1 hover:shadow-md transition">
-                  <span className="flex items-center gap-2">
-                    <i className="fab fa-linkedin text-xl text-purple-600"></i>
-                    LinkedIn
-                  </span>
-                </a>
                 <a href="https://github.com/GeorgiBurnaski" className="width-fit height-fit hover:background-purple-100 rounded-lg px-2 py-1 hover:shadow-md transition">
                 <span className="flex items-center gap-2">
                   <i className="fab fa-github text-xl text-gray-800 dark:text-gray-200"></i>
                   GitHub
                 </span>
+                </a>
+                <a href="https://www.facebook.com/georgi.burnaski/" className="width-fit height-fit hover:background-purple-100 rounded-lg px-2 py-1 hover:shadow-md transition">
+                  <span className="flex items-center gap-2">
+                    <i className="fab fa-facebook text-xl text-blue-600"></i>
+                    Facebook
+                  </span>
+                </a>
+                <a href="https://www.linkedin.com/in/georgi-burnaski-67598b22b/" className="width-fit height-fit hover:background-purple-100 rounded-lg px-2 py-1 hover:shadow-md transition">
+                  <span className="flex items-center gap-2">
+                    <i className="fab fa-linkedin text-xl text-purple-600"></i>
+                    LinkedIn
+                  </span>
                 </a>
               </div>
             </div>

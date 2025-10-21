@@ -80,7 +80,7 @@ export default function ActivityEntry({
     <>
       {/* Regular Activity Card */}
       <div 
-        className={`p-4 rounded-lg border-l-4 ${getColorClasses("bg")} hover:shadow-lg transition-all duration-300 cursor-pointer hover:scale-105 active:scale-95 hover:rotate-1 active:rotate-0 transform-gpu`}
+        className={`p-4 rounded-lg border-l-4 ${getColorClasses("bg")} hover:shadow-lg transition-all duration-300 cursor-pointer`}
         onClick={toggleExpanded}
       >
         <div className="flex gap-4">
@@ -135,7 +135,7 @@ export default function ActivityEntry({
           onClick={toggleExpanded}
         >
           <div 
-            className={`relative max-w-4xl w-full max-h-[90vh] overflow-auto rounded-3xl border-l-8 ${getColorClasses("bg")} shadow-2xl transform transition-all duration-500 scale-100 backdrop-blur-sm animate-bounce-in`}
+            className={`relative max-w-4xl w-full max-h-[90vh] overflow-hidden rounded-3xl border-l-8 ${getColorClasses("bg")} shadow-2xl transition-opacity duration-500 animate-fade-in`}
             onClick={(e) => e.stopPropagation()}
           >
             {/* Close Button */}
@@ -146,7 +146,7 @@ export default function ActivityEntry({
               <i className="fas fa-times text-gray-600 dark:text-gray-300"></i>
             </button>
 <div 
-  className="fixed inset-0 backdrop-blur-md bg-white/20 dark:bg-slate-900/20 z-50 flex items-center justify-center p-4 animate-fade-in"
+  className="fixed inset-0 bg-white/20 dark:bg-slate-900/20 z-50 rounded-2xl flex items-center justify-center p-4 animate-fade-in"
   onClick={toggleExpanded}
 ></div>
             <div className="p-8">
