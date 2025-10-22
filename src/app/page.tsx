@@ -291,7 +291,7 @@ export default function Home() {
               </li>
               <li className="flex items-start gap-3">
                 <i className="fas fa-heart text-purple-500 mt-1 flex-shrink-0"></i>
-                <span>Family-oriented, married, father of two.</span>
+                <span>Family-oriented, married, father of twodddddddddddd.</span>
               </li>
             </ul>
           </section>
