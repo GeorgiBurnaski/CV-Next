@@ -1,4 +1,5 @@
 import { dirname } from "path";
+import { defineConfig, globalIgnores } from "eslint-define-config";
 import { fileURLToPath } from "url";
 import { FlatCompat } from "@eslint/eslintrc";
 
@@ -9,10 +10,10 @@ const compat = new FlatCompat({
   baseDirectory: __dirname,
 });
 
-const eslintConfig = [
+const eslintConfig = defineConfig([
   ...compat.extends("next/core-web-vitals", "next/typescript"),
   {
-    ignores: [
+    globalIgnores: [
       "node_modules/**",
       ".next/**",
       "out/**",
@@ -20,6 +21,6 @@ const eslintConfig = [
       "next-env.d.ts",
     ],
   },
-];
+]);
 
 export default eslintConfig;
