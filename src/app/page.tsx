@@ -144,28 +144,28 @@ export default function Home() {
                   Writer
                 </span>
                 <span className="flex items-center gap-2 text-green-600 dark:text-green-400 text-lg md:text-lg font-semibold">
-                  <i className="fas fa-book text-lg"></i>
-                  Learner
+                  <i className="fas fa-chart-line text-lg"></i>
+                  Analyst
                 </span>
                 <span className="flex items-center gap-2 text-green-600 dark:text-green-400 text-lg md:text-lg font-semibold">
-                  <i className="fas fa-dumbbell text-lg"></i>
-                  Achiever
+                  <i className="fas fa-lightbulb text-lg"></i>
+                  Innovator
                 </span>
                 <span className="flex items-center gap-2 text-green-600 dark:text-green-400 text-lg md:text-lg font-semibold">
-                  <i className="fas fa-hiking text-lg"></i>
-                  Hiker
+                  <i className="fas fa-gamepad text-lg"></i>
+                  Strategist
                 </span>
                 <span className="flex items-center gap-2 text-green-600 dark:text-green-400 text-lg md:text-lg font-semibold">
                   <i className="fas fa-globe-americas text-lg"></i>
                   Traveller
                 </span>
                 <span className="flex items-center gap-2 text-green-600 dark:text-green-400 text-lg md:text-lg font-semibold">
-                  <i className="fas fa-seedling text-lg"></i>
-                  Producer
+                  <i className="fas fa-hiking text-lg"></i>
+                  Hiker
                 </span>
                 <span className="flex items-center gap-2 text-green-600 dark:text-green-400 text-lg md:text-lg font-semibold">
-                  <i className="fas fa-gamepad text-lg"></i>
-                  Strategist
+                  <i className="fas fa-seedling text-lg"></i>
+                  Producer
                 </span>
               </div>
               
